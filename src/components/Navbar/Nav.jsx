@@ -1,29 +1,45 @@
-import { AppBar, Toolbar, IconButton, Typography, Button } from "@mui/material";
+import { useState } from "react";
+import { AppBar, Toolbar, IconButton, Typography, Button, Menu, MenuItem, MenuList } from "@mui/material";
 import DriveEtaRoundedIcon from '@mui/icons-material/DriveEtaRounded';
-import Menu from '@mui/icons-material/Menu';
+import MenuOpen from '@mui/icons-material/MenuOpen';
 import Stack from '@mui/system/Stack';
 import { Link } from "react-router-dom";
 import "../../styles/style.css"
 
+//Hamburger open/close handlers.
 const Nav = () => {
+  const [anchorNav, setAnchorNav] = useState(null);
+  const openMenu = ({ currentTarget }) => {
+    setAnchorNav(currentTarget);
+  }
+  const closeMenu = () => {
+    setAnchorNav(null);
+  }
+
   return (
-    <AppBar sx={{display: 'flex', w: '100%', border: 2}}>
+    <AppBar sx={{ display: 'flex', w: '100%' }}>
       <Toolbar>
-        <IconButton aria-label='logo' color='inherit' size='large' edge='start' sx={{display: {xs: 'none', md: 'flex'}}} >
-          <DriveEtaRoundedIcon/>
+        <IconButton aria-label='logo' color='inherit' size='large' edge='start' sx={{ display: { xs: 'none', md: 'flex' } }} >
+          <DriveEtaRoundedIcon />
         </IconButton>
-          <Typography variant='h3' component='div' sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>E-Carro</Typography>
-      <Stack direction="row" spacing={2} sx={{display: {xs: 'none', md: 'flex'}}}>
-        <Button color="inherit"><Link to='/'>Ofertas</Link></Button>
-        <Button color="inherit">Administração</Button>
-      </Stack>
-      <Stack direction="row" spacing={2} sx={{display: {xs: 'flex', md: 'none'}}}>
-        <IconButton size="large" edge="start" color="inherit">
-          <Menu/>
-        </IconButton>
-      </Stack>
+        <Typography variant='h3' component='div' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>E-Carro</Typography>
+        <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', md: 'flex' } }}>
+          <Button color="inherit"><Link to='/'>Ofertas</Link></Button>
+          <Button color="inherit">Administração</Button>
+        </Stack>
+        <Stack direction="row" spacing={2} sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <IconButton size="large" edge="start" color="inherit" onClick={openMenu}>
+            <MenuOpen />
+          </IconButton>
+          <Menu open={Boolean(anchorNav)} onClose={closeMenu} sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <MenuList>
+              <MenuItem><Link to="/">Ofertas</Link></MenuItem>
+              <MenuItem><Link to="/administracao">Administração</Link></MenuItem>
+            </MenuList>
+          </Menu>
+        </Stack>
+        <Typography variant='h3' component='div' sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>E-Carro</Typography>
       </Toolbar>
-      
     </AppBar >
   );
 };

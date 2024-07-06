@@ -1,7 +1,7 @@
 {
   "name": "projeto-souenergy",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "json-server": "^1.0.0-beta.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

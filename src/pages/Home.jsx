@@ -1,9 +1,13 @@
-import { Typography, Container } from "@mui/material";
+import { Typography, Container, Box } from "@mui/material";
+import Nav from "../components/Navbar/Nav";
 
-export default function Home(){
+export default function Home() {
   return (
-    <Container sx={{border: 2, bgcolor: 'red', m: 0}}>
-      <Typography variant="h2">At home.</Typography>
-    </Container>
+    <Box>
+      <Nav />
+      <Container>
+        <Typography variant="h2">At home.</Typography>
+      </Container>
+    </Box>
   );
 }

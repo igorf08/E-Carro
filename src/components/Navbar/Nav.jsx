@@ -25,7 +25,7 @@ const Nav = () => {
         <Typography variant='h3' component='div' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>E-Carro</Typography>
         <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', md: 'flex' } }}>
           <Button color="inherit"><Link to='/'>Ofertas</Link></Button>
-          <Button color="inherit">Administração</Button>
+          <Button color="inherit"><Link to="/administracao">Administração</Link></Button>
         </Stack>
         <Stack direction="row" spacing={2} sx={{ display: { xs: 'flex', md: 'none' } }}>
           <IconButton size="large" edge="start" color="inherit" onClick={openMenu}>

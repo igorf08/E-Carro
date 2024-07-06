@@ -1,0 +1,112 @@
+{
+  "veiculos": [
+    {
+      "id": 1,
+      "marca": "Chevrolet",
+      "modelo": "Onix Plus Premier",
+      "ano": 2023,
+      "preco": 65000,
+      "cor": "Vermelho",
+      "quilometragem": 5000,
+      "placa": "ABC1D23",
+      "cidade": "São Paulo",
+      "fotos": [
+        "https://photos.fife.usercontent.google.com/pw/AP1GczPlMJhBHZ9d0s5my0fVXaTiCkgaLicqwbGKIWh57lgsh2z7Xpc8Zhwbfw=w1057-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczM4zPwkxTtvHJHDsb23x2n4X6Nj0g6_ciHiMo9iddQdl4QphdDCaboI8Q=w990-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczPd8rS-82fwf_gesJX90SBs0iSNMr2YHtwb221mWaApOKEV2fTQdQRv4g=w990-h660-s-no-gm?authuser=0"
+      ],
+      "dataCadastro": "2024-07-01T10:00:00Z",
+      "numeroVisualizacoes": 150
+    },
+    {
+      "id": 2,
+      "marca": "Hyundai",
+      "modelo": "HB20S",
+      "ano": 2023,
+      "preco": 70000,
+      "cor": "Branco",
+      "quilometragem": 3000,
+      "placa": "DEF4G56",
+      "cidade": "Rio de Janeiro",
+      "fotos": [
+        "https://photos.fife.usercontent.google.com/pw/AP1GczNGp-bfPtj7QWgpYh81qvbTqMzQrh5SxmmjmBPt9yr4OjZXv9jECaeX0Q=w1056-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczP2UanIirKMBdkYXVwLnDTu3KY8fQnThX1SYz3_6G6tO7Bzyjd_4W3JGA=w1056-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczMWcot66SiQnxRe_rP5Qrxd9-UQJvJXAylWrQQM9AtM9XIWCfPU0PSA_A=w880-h660-s-no-gm?authuser=0"
+      ],
+      "dataCadastro": "2024-07-02T11:00:00Z",
+      "numeroVisualizacoes": 120
+    },
+    {
+      "id": 3,
+      "marca": "Toyota",
+      "modelo": "Etios",
+      "ano": 2023,
+      "preco": 60000,
+      "cor": "Prata",
+      "quilometragem": 8000,
+      "placa": "JKL0M12",
+      "cidade": "Belo Horizonte",
+      "fotos": [
+        "https://photos.fife.usercontent.google.com/pw/AP1GczO35aBdNo08fp6l2l3Bzc3mYQaq3UXU6kFt0FwJhJ9GDyPGlKZiQV4e2Q=w990-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczOh1uRiWhXC2Yi8jObu_fpvbQ2ol1WmdEXewbZDgzL-tpYbQ1hi3DmAHg=w879-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczO6GvK4V_p24s372ZQIyExQuPIGjDPoEg666J4jGDhk7bgvXR5dVKxRgA=w880-h660-s-no-gm?authuser=0"
+      ],
+      "dataCadastro": "2024-07-04T13:00:00Z",
+      "numeroVisualizacoes": 200
+    },
+    {
+      "id": 4,
+      "marca": "Volkswagen",
+      "modelo": "Gol",
+      "ano": 2012,
+      "preco": 55000,
+      "cor": "Branco",
+      "quilometragem": 14000,
+      "placa": "MNO3P45",
+      "cidade": "Porto Alegre",
+      "fotos": [
+        "https://photos.fife.usercontent.google.com/pw/AP1GczNlBd5Cy6aK1ulUkbtE5KOnYSaHnkDiEuDPB54vf6t98Kj-GXVUQG1lxA=w987-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczM7tZ2yd7cHF6ayBx5rA4zI2Zl7kBy5Oca5njKEJqAHkmWxiliVvdxOkg=w867-h601-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczN_3xMrZc4nUkVSXv4AsAnpO_Ql9zsPjqnC8b5A0ppp2GEO3BOXK6Rg0g=w848-h588-s-no-gm?authuser=0"
+      ],
+      "dataCadastro": "2024-07-05T14:00:00Z",
+      "numeroVisualizacoes": 180
+    },
+    {
+      "id": 5,
+      "marca": "Fiat",
+      "modelo": "Argo",
+      "ano": 2023,
+      "preco": 58000,
+      "cor": "Vermelho",
+      "quilometragem": 4000,
+      "placa": "QRS6T78",
+      "cidade": "Salvador",
+      "fotos": [
+        "https://photos.fife.usercontent.google.com/pw/AP1GczNIyah21NGyWn9dfDOQsjrKnwOEo1OycmqGua5xJHiHtyw0JXmGNiQgpA=w880-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczPYVcFzTXdFWincIzxcQnKSBBvoftYkH6bYNSbe4BhogdIpiVDsCFPQ_Q=w881-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczOJ23XpwVMK2bBMdOS6JvOC5I89e-R6U_32bGOvhBBs0scFZ_Y4bchFyA=w1056-h660-s-no-gm?authuser=0"
+      ],
+      "dataCadastro": "2024-07-06T15:00:00Z",
+      "numeroVisualizacoes": 160
+    },
+    {
+      "id": 6,
+      "marca": "Renault",
+      "modelo": "Kwid",
+      "ano": 2023,
+      "preco": 45000,
+      "cor": "Branco",
+      "quilometragem": 2000,
+      "placa": "UVW9X12",
+      "cidade": "Fortaleza",
+      "fotos": [
+        "https://photos.fife.usercontent.google.com/pw/AP1GczNlsN3CaM3_CaqEBtm79Lj-zLtcTgeUqFNxqnSsMx2CznrmRe7ajiarbg=w990-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczNJPWecDkgqA3SPX0cjYwyd59QpRduIbJa2JCKD997VdKS-ilDiU2eXLw=w990-h660-s-no-gm?authuser=0",
+        "https://photos.fife.usercontent.google.com/pw/AP1GczNfDd-1l1qtEUmqovxUj66cRY6oC96RYGR-K1cH-c9gOT7ol1aaeZxhJA=w1054-h660-s-no-gm?authuser=0"
+      ],
+      "dataCadastro": "2024-07-07T16:00:00Z",
+      "numeroVisualizacoes": 140
+    }
+  ]
+}

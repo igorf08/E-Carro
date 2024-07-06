@@ -1,7 +1,7 @@
 {
   "name": "projeto-souenergy",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -11,6 +11,10 @@
   },
   "dependencies": {
     "@mui/icons-material": "^5.16.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.16.0",
+    "json-server": "^1.0.0-beta.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

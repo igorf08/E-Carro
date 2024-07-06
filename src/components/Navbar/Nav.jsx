@@ -17,7 +17,7 @@ const Nav = () => {
   }
 
   return (
-    <AppBar sx={{ display: 'flex', w: '100%' }}>
+    <AppBar sx={{ display: 'flex', w: '100%' }} position="static">
       <Toolbar>
         <IconButton aria-label='logo' color='inherit' size='large' edge='start' sx={{ display: { xs: 'none', md: 'flex' } }} >
           <DriveEtaRoundedIcon />

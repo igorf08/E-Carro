@@ -15,6 +15,7 @@
     "@fontsource/roboto": "^5.0.13",
     "@mui/icons-material": "^5.16.0",
     "@mui/material": "^5.16.0",
+    "axios": "^1.7.2",
     "json-server": "^1.0.0-beta.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

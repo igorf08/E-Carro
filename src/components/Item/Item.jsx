@@ -8,7 +8,7 @@ function Item({ item }) {
             component="img" 
             image={item} 
             aria-label="veiculo"
-            sx={{width: {xs: 410, md: 900}, height: {xs: 310, md:550}}}
+            sx={{width: {xs: 400, md: 900}, height: {xs: 310, md:550}}}
           />
       </Card>
   );

@@ -2,11 +2,15 @@ import { Card, CardContent, CardMedia, Typography, Button, CardActionArea, CardA
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
 import { useState, useEffect } from "react";
+import VehicleDetailsModal from "../VehicleDetailsModal/VehicleDetailsModal";
+import { formatters } from "../../utils/formatters";
 
 const MediaCard = () => {
 
   const [vehicles, setVehicles] = useState(null);
   const [view, setView] = useState('grid');
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -16,23 +20,17 @@ const MediaCard = () => {
     })();
   });
 
-  const formatters = {
-
-    currencyFormatter: (num) => {
-      return num.toLocaleString("pt-BR", { style: 'currency', currency: 'BRL' })
-    },
-    formatDate: (dateStr) => {
-      const date = new Date(dateStr);
-      return new Intl.DateTimeFormat('pt-BR', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-      }).format(date);
-    }
-  }
-
   const handleViewChange = (event, nextView) => {
     setView(nextView);
+  };
+
+  const handleOpenModal = (vehicle) => {
+    setSelectedVehicle(vehicle);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false); 
   };
 
   return (
@@ -84,14 +82,21 @@ const MediaCard = () => {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button sx={{ fontSize: view === 'grid' ? '1em' : '1.2em' }} color="secondary">
+                  <Button onClick={() => handleOpenModal(vehicle)} sx={{ fontSize: view === 'grid' ? '1em' : '1.2em' }} color="secondary">
                     Ir para o anúncio
                   </Button>
                 </CardActions>
               </CardActionArea>
             </Card>
-          ))}
+          ))}      
       </Box>
+      {selectedVehicle && (
+        <VehicleDetailsModal
+          vehicle={selectedVehicle}
+          open={modalOpen}
+          onClose={handleCloseModal}
+        />
+      )}
     </Box>
   );
 };

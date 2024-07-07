@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 import { ThemeProvider } from "@mui/material";
 import router from "./router/router"
-import { RouterProvider } from "react-router-dom";
 import theme from "./assets/theme/index.jsx"
 import "./styles/style.css"
 import '@fontsource/roboto/300.css';

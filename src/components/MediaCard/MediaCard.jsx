@@ -44,7 +44,7 @@ const MediaCard = () => {
 
   return (
     <Box sx={{ p: '2em', backgroundColor: '#f6f6f6' }}>
-      <Stack direction="row" spacing={2} justifyContent="center" mb={4}>
+      <Stack direction="row" spacing={2} justifyContent="left" mb={4}>
         <ToggleButtonGroup value={view} exclusive onChange={handleViewChange} aria-label="view toggle">
           <ToggleButton value="grid" aria-label="grid view">
             <ViewModuleIcon />
@@ -55,9 +55,9 @@ const MediaCard = () => {
         </ToggleButtonGroup>
       </Stack>
       <Box
-        sx={{ display: 'flex', flexDirection: view === 'grid' ? 'row' : 'column', flexWrap: view === 'grid' ? 'wrap' : 'nowrap', gap: '2em', justifyContent: 'center' }}>
+        sx={{ display: 'flex', flexDirection: view === 'grid' ? 'row' : 'column', flexWrap: view === 'grid' ? 'wrap' : 'nowrap', gap: {xs: '1em', md:'2em'}, justifyContent: 'center' }}>
         {vehicles.map((vehicle) => (
-          <Card key={vehicle.id} sx={{ backgroundColor: 'primary.light', maxWidth: view === 'grid' ? {xs: 175, md: 250} : '100%', marginBottom: 2, boxShadow: 2 }}>
+          <Card key={vehicle.id} sx={{ backgroundColor: 'primary.light', maxWidth: view === 'grid' ? {xs: 145, md: 250} : '100%', marginBottom: 2, boxShadow: 2 }}>
             <CardActionArea sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', height: '100%' }} >
               <CardMedia sx={{ boxShadow: 1, height: view === 'grid' ? 200 : 400, width: '100%' }} component="img" image={vehicle.fotos[0]} />
               <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '0.3em' }}>

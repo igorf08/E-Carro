@@ -64,7 +64,7 @@ const MediaCard = () => {
                   <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
                     Ano: {vehicle.ano}
                   </Typography>
-                  <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text.secondary">
+                  <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
                     Cor: {vehicle.cor}
                   </Typography>
                   <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">

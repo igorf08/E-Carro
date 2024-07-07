@@ -40,7 +40,7 @@ const Nav = () => {
         </Stack>
         <Typography variant='h3' component='div' sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>E-Carro</Typography>
       </Toolbar>
-    </AppBar >
+    </AppBar>
   );
 };
 

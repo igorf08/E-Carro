@@ -57,7 +57,7 @@ const MediaCard = () => {
       <Box
         sx={{ display: 'flex', flexDirection: view === 'grid' ? 'row' : 'column', flexWrap: view === 'grid' ? 'wrap' : 'nowrap', gap: '2em', justifyContent: 'center' }}>
         {vehicles.map((vehicle) => (
-          <Card key={vehicle.id} sx={{ backgroundColor: 'primary.light', maxWidth: view === 'grid' ? 130 : '100%', marginBottom: 2, boxShadow: 2 }}>
+          <Card key={vehicle.id} sx={{ backgroundColor: 'primary.light', maxWidth: view === 'grid' ? {xs: 130, md: 250} : '100%', marginBottom: 2, boxShadow: 2 }}>
             <CardActionArea sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', height: '100%' }} >
               <CardMedia sx={{ boxShadow: 1, height: view === 'grid' ? 'fit' : 400, objectFit: 'contain', width: '100%' }} component="img" image={vehicle.fotos[0]} />
               <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '0.3em' }}>

@@ -1,4 +1,4 @@
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import Nav from "../components/Navbar/Nav";
 import MediaCard from "../components/MediaCard/MediaCard";
 

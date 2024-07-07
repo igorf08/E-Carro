@@ -31,10 +31,10 @@ const Nav = () => {
           <IconButton size="large" edge="start" color="inherit" onClick={openMenu}>
             <MenuOpen />
           </IconButton>
-          <Menu open={Boolean(anchorNav)} onClose={closeMenu} sx={{ display: { xs: 'flex', md: 'none' } }}>
+          <Menu anchorEl={anchorNav} open={Boolean(anchorNav)} onClose={closeMenu} sx={{ display: {xs: 'flex', md: 'none' }}}>
             <MenuList>
-              <MenuItem><Link to="/">Ofertas</Link></MenuItem>
-              <MenuItem><Link to="/administracao">Administração</Link></MenuItem>
+              <MenuItem onClick={closeMenu}><Link to="/">Ofertas</Link></MenuItem>
+              <MenuItem onClick={closeMenu}><Link to="/administracao">Administração</Link></MenuItem>
             </MenuList>
           </Menu>
         </Stack>

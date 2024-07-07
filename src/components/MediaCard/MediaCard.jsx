@@ -20,7 +20,7 @@ const MediaCard = () => {
     fetchData();
   }, []);
 
-  const handleViewChange = (nextView) => {
+  const handleViewChange = (event, nextView) => {
     setView(nextView);
   };
 
@@ -28,10 +28,11 @@ const MediaCard = () => {
     setSelectedVehicle(vehicle);
     setModalOpen(true);
 
-    //Faz o incremento das visualizações do veículo com base no selecionado.
+    //Faz o incremento das visualizações com base na seleção.
     const updatedVehicles = vehicles.map(v => {
-      if (v.id === vehicle.id) ({ ...v, numeroVisualizacoes: v.numeroVisualizacoes + 1 })
-      
+      if (v.id === vehicle.id) {
+        return { ...v, numeroVisualizacoes: (v.numeroVisualizacoes || 0) + 1 };
+      }
       return v;
     });
     setVehicles(updatedVehicles);
@@ -56,40 +57,40 @@ const MediaCard = () => {
       <Box
         sx={{ display: 'flex', flexDirection: view === 'grid' ? 'row' : 'column', flexWrap: view === 'grid' ? 'wrap' : 'nowrap', gap: '2em', justifyContent: 'center' }}>
         {vehicles.map((vehicle) => (
-          <Card key={vehicle.id} sx={{ backgroundColor: 'primary.light', maxWidth: view === 'grid' ? 300 : '100%', marginBottom: 2, boxShadow: 2 }}>
+          <Card key={vehicle.id} sx={{ backgroundColor: 'primary.light', maxWidth: view === 'grid' ? {xs: 130, md: 250} : '100%', marginBottom: 2, boxShadow: 2 }}>
             <CardActionArea sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', height: '100%' }} >
-              <CardMedia sx={{ boxShadow: 1, height: view === 'grid' ? 200 : 400 }} component="img" image={vehicle.fotos[0]} />
+              <CardMedia sx={{ boxShadow: 1, height: view === 'grid' ? 'fit' : 400, objectFit: 'contain', width: '100%' }} component="img" image={vehicle.fotos[0]} />
               <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', gap: '0.3em' }}>
-                <Typography sx={{ mb: '0.2em' }} variant={view === 'grid' ? 'h5' : 'h2'} component="div">
+                <Typography sx={{ mb: '0.2em' }} variant={view === 'grid' ? 'h6' : 'h2'} component="div">
                   {vehicle.marca} {vehicle.modelo}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'h6'} color="text">
+                <Typography variant={view === 'grid' ? 'body3' : 'h6'} sx={{fontWeight: '600'}} color="text">
                   {formatters.currencyFormatter(vehicle.preco)}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
                   Ano: {vehicle.ano}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
                   Cor: {vehicle.cor}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
                   Placa: {vehicle.placa}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
                   Cidade: {vehicle.cidade}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
                   Quilometragem: {vehicle.quilometragem}km
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
                   Data de Cadastro: {formatters.formatDate(vehicle.dataCadastro)}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
                   Nº de visualizações: {vehicle.numeroVisualizacoes}
                 </Typography>
               </CardContent>
               <CardActions>
-                <Button onClick={() => handleOpenModal(vehicle)} sx={{ fontSize: view === 'grid' ? '1em' : '1.2em' }} color="secondary">
+                <Button onClick={() => handleOpenModal(vehicle)} sx={{ fontSize: view === 'grid' ? '0.9em' : '1.2em' }} color="secondary">
                   Ir para o anúncio
                 </Button>
               </CardActions>

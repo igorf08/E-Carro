@@ -79,6 +79,9 @@ const MediaCard = () => {
                   <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
                     Data de Cadastro: {formatters.formatDate(vehicle.dataCadastro)}
                   </Typography>
+                  <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text.secondary">
+                    Nº de visualizações: {vehicle.numeroVisualizacoes}
+                  </Typography>
                 </CardContent>
                 <CardActions>
                   <Button sx={{ fontSize: view === 'grid' ? '1em' : '1.2em' }} color="secondary">

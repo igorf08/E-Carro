@@ -1,0 +1,112 @@
+{
+  "veiculos": [
+    {
+      "id": 1,
+      "marca": "Chevrolet",
+      "modelo": "Onix Plus Premier",
+      "ano": 2023,
+      "preco": 65000,
+      "cor": "Vermelho",
+      "quilometragem": 5000,
+      "placa": "ABC1D23",
+      "cidade": "São Paulo",
+      "fotos": [
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Chevrolet-Onix-2023%20(44).JPG",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Chevrolet-Onix-2023%20(20).JPG",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Chevrolet-Onix-2023%20(21).JPG"
+      ],
+      "dataCadastro": "2024-07-01T10:00:00Z",
+      "numeroVisualizacoes": 150
+    },
+    {
+      "id": 2,
+      "marca": "Hyundai",
+      "modelo": "HB20S",
+      "ano": 2023,
+      "preco": 70000,
+      "cor": "Branco",
+      "quilometragem": 3000,
+      "placa": "DEF4G56",
+      "cidade": "Rio de Janeiro",
+      "fotos": [
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Novo-Hyundai-HB20S-2020%20(34).jpg",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Novo-Hyundai-HB20S-2020%20(18).jpg",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Novo-Hyundai-HB20S-2020%20(36).jpg"
+      ],
+      "dataCadastro": "2024-07-02T11:00:00Z",
+      "numeroVisualizacoes": 120
+    },
+    {
+      "id": 3,
+      "marca": "Toyota",
+      "modelo": "Etios",
+      "ano": 2023,
+      "preco": 60000,
+      "cor": "Prata",
+      "quilometragem": 8000,
+      "placa": "JKL0M12",
+      "cidade": "Belo Horizonte",
+      "fotos": [
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Toyota-Etios-2013.jpg",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Toyota-Etios-painel.jpg",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Toyota-Etios-2013-hatch.jpg"
+      ],
+      "dataCadastro": "2024-07-04T13:00:00Z",
+      "numeroVisualizacoes": 200
+    },
+    {
+      "id": 4,
+      "marca": "Volkswagen",
+      "modelo": "Gol",
+      "ano": 2012,
+      "preco": 55000,
+      "cor": "Branco",
+      "quilometragem": 14000,
+      "placa": "MNO3P45",
+      "cidade": "Porto Alegre",
+      "fotos": [
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/VW-Gol-2012-lateral.JPG",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/VW-Gol-2012-painel.JPG",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/VW-Gol-2012-traseira.JPG"
+      ],
+      "dataCadastro": "2024-07-05T14:00:00Z",
+      "numeroVisualizacoes": 180
+    },
+    {
+      "id": 5,
+      "marca": "Fiat",
+      "modelo": "Argo",
+      "ano": 2023,
+      "preco": 58000,
+      "cor": "Vermelho",
+      "quilometragem": 4000,
+      "placa": "QRS6T78",
+      "cidade": "Salvador",
+      "fotos": [
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Fiat-Argo%20(69).jpg",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Fiat-Argo%20(67).jpg",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Fiat-Argo%20(72).jpg"
+      ],
+      "dataCadastro": "2024-07-06T15:00:00Z",
+      "numeroVisualizacoes": 160
+    },
+    {
+      "id": 6,
+      "marca": "Renault",
+      "modelo": "Kwid",
+      "ano": 2023,
+      "preco": 45000,
+      "cor": "Branco",
+      "quilometragem": 2000,
+      "placa": "UVW9X12",
+      "cidade": "Fortaleza",
+      "fotos": [
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Renault-Kwid-2023%20(93).JPG",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Renault-Kwid-2023%20(63).JPG",
+        "https://raw.githubusercontent.com/igorf08/souEnergy-DB/main/images/Renault-Kwid-2023%20(30).JPG"
+      ],
+      "dataCadastro": "2024-07-07T16:00:00Z",
+      "numeroVisualizacoes": 140
+    }
+  ]
+}

@@ -8,6 +8,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom'
+import { Alert, Snackbar } from '@mui/material';
+
 
 const defaultTheme = createTheme();
 
@@ -15,6 +18,8 @@ export default function Create() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [base64Files, setBase64Files] = useState([]);
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     const body = {
@@ -28,11 +33,9 @@ export default function Create() {
       placa: data.carPlate,
       cidade: data.carCity,
       fotos: base64Files,
-      dataCadastro: new Date().toISOString(),
-      numeroVisualizacoes: 0
+      data_cadastro: new Date().toISOString(),
+      numero_visualizacoes: 0
     };
-
-    console.log('Form data:', body);
 
     fetch('http://localhost:3000/veiculos', {
       method: 'POST',
@@ -46,11 +49,47 @@ export default function Create() {
         console.log('Success:', data);
         reset();
         setSelectedFiles([]);
-        setBase64Files([]);
+        setOpen(true)
+        setTimeout(() => {
+          navigate("/", { replace: true }) 
+          setOpen(false);
+        }, 5000)
       })
       .catch((error) => {
         console.error('Error:', error);
       });
+
+  };
+
+  const onUpload = (e) => {
+    const files = Array.from(e.target.files);
+    setSelectedFiles(files);
+
+
+    const allowedExtensions = ['png', 'jpg', 'jpeg'];
+    const validFiles = files.filter(file => {
+      const extension = file.name.split('.').pop().toLowerCase();
+      return allowedExtensions.includes(extension);
+    });
+  
+    if (validFiles.length < 2) {
+      console.error('É necessário enviar pelo menos 2 fotos em formatos png, jpg ou jpeg.');
+      return;
+    }
+  
+
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onloadend = () => {
+        const base64String = reader.result
+        setBase64Files(prevBase64Files => [...prevBase64Files, base64String]);
+        console.log(base64Files);
+      };
+      reader.onerror = (error) => {
+        console.error('Error:', error);
+      };
+    });
   };
 
   return (
@@ -91,6 +130,11 @@ export default function Create() {
                       value: /^[A-Za-z\s]+$/,
                       message: 'Somente letras são permitidas!',
                     },
+                    validate: (value) => {
+                      if (value.length < 2 || value.length > 30) {
+                        return 'A marca deve entre 2 e 30 letras.'
+                      }
+                    }
                   })}
                 />
               </Grid>
@@ -105,6 +149,11 @@ export default function Create() {
                   helperText={errors.carModel?.message}
                   {...register('carModel', {
                     required: 'Insira o modelo do veículo!',
+                    validate: (value) => {
+                      if (value.length < 2 || value.length > 30) {
+                        return 'O modelo deve entre 2 e 30 letras.'
+                      }
+                    }
                   })}
                 />
               </Grid>
@@ -212,30 +261,48 @@ export default function Create() {
                   })}
                 />
               </Grid>
-              <Box sx={{ p: 2 }}>
+              <Box sx={{display: 'flex', flexDirection: 'column', p: 2, gap: 1.5 }}>
+                
                 <input
                   type="file"
+                  id="carPhotos"
                   name="carPhotos"
                   multiple
                   {...register('carPhotos', {
-                    required: 'Insira as fotos do veículo!'
+                    required: 'Insira as fotos do veículo!',
+                    validate: {
+                      minFiles: files => files.length >= 2 || 'É necessário enviar pelo menos 2 fotos.',
+                      validExtensions: files => {
+                        const allowedExtensions = ['png', 'jpg', 'jpeg'];
+                        return Array.from(files).every(file => 
+                          allowedExtensions.includes(file.name.split('.').pop().toLowerCase())
+                        ) || 'Apenas arquivos png, jpg ou jpeg são permitidos.';
+                      }
+                    }
                   })}
+                  onChange={onUpload}
                 />
+                {errors.carPhotos && <span>{errors.carPhotos.message}</span>}
               </Box>
             </Grid>
             <Button
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2}}
             >
               Enviar anúncio
             </Button>
-            <Grid container justifyContent="flex-end">
-              <Grid item></Grid>
-            </Grid>
           </Box>
         </Box>
+        <Snackbar open={open} autoHideDuration={6000}>
+          <Alert 
+          onClose={open}
+          severity="success"
+          variant="filled">
+            Anúncio criado, redirecionando em 5 segundos...
+          </Alert>
+      </Snackbar>
       </Container>
     </ThemeProvider>
   );

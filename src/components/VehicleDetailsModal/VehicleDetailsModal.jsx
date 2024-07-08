@@ -27,7 +27,7 @@ const VehicleDetailsModal = ({ vehicle, open, onClose }) => {
                     <Typography variant="subtitle1">Placa: {vehicle.placa}</Typography>
                     <Typography variant="subtitle1">Cidade: {vehicle.cidade}</Typography>
                     <Typography variant="subtitle1">Quilometragem: {vehicle.quilometragem} km</Typography>
-                    <Typography variant="subtitle1">Data de Cadastro: {formatters.formatDate(vehicle.dataCadastro)}</Typography>
+                    <Typography variant="subtitle1">Data de Cadastro: {formatters.formatDate(vehicle.data_cadastro)}</Typography>
                 </Box>
                 <Button onClick={handleClose} sx={{ mt: 5 }}>Fechar</Button>
             </Box>

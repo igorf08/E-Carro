@@ -8,7 +8,7 @@ const useVehicleManagement = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/veiculos").then((res) => {
+    axios.get("https://ecarro-ol59r2nnt-igorf08s-projects.vercel.app/veiculos").then((res) => {
       const data = res.data;
       if (Array.isArray(data) && data.length > 0) {
         const firstRecord = data[0];
@@ -40,7 +40,7 @@ const useVehicleManagement = () => {
     console.log(`Excluindo registro com id: ${id}...`);
 
     axios
-      .delete(`http://localhost:3000/veiculos/${id}`)
+      .delete(`http://VehicleDeleteModal:3000/veiculos/${id}`)
       .then(() => {
         console.log("Registro deletado com sucesso");
         setRecords(trecords.filter((record) => record.id !== id));

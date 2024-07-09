@@ -30,7 +30,7 @@ export default function Create() {
       preco: data.carPrice,
       cor: data.carColor,
       quilometragem: data.carMileage,
-      placa: data.carPlate,
+      placa: data.carPlate.toUpperCase(),
       cidade: data.carCity,
       fotos: base64Files,
       data_cadastro: new Date().toISOString(),
@@ -244,6 +244,16 @@ export default function Create() {
                   helperText={errors.carPlate?.message}
                   {...register('carPlate', {
                     required: 'Insira a placa do veículo!',
+                    pattern: {
+                      value: /[A-z]{3}-\d[A-j0-9]\d{2}/,
+                      message: 'Número de placa inválido.'
+                    },
+                    validate: (value) => {
+                      if (value.length < 7) {
+                        return 'Sua placa precisa conter 7 dígitos.';
+                      }
+                      return true;
+                    }
                   })}
                 />
               </Grid>

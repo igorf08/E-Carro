@@ -5,7 +5,7 @@ const useVehicles = () => {
 
   useEffect(() => {
     const fetchData = () => {
-      fetch('http://localhost:3000/veiculos')
+      fetch('https://ecarro-ol59r2nnt-igorf08s-projects.vercel.app/veiculos')
         .then((response) => response.json())
         .then((data) => setVehicles(data))
         .catch((error) => console.error('Erro ao buscar veículos:', error));

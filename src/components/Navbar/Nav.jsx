@@ -20,7 +20,9 @@ const Nav = () => {
     <AppBar sx={{ display: 'flex', w: '100%' }} position="static">
       <Toolbar>
         <IconButton aria-label='logo' color='inherit' size='large' edge='start' sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <DriveEtaRoundedIcon />
+          <Link style={{display: 'inherit'}} to="/">
+            <DriveEtaRoundedIcon />
+          </Link>
         </IconButton>
         <Typography variant='h3' component='div' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>E-Carro</Typography>
         <Stack direction="row" spacing={2} sx={{ display: { xs: 'none', md: 'flex' } }}>

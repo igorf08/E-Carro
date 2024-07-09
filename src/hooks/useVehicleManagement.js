@@ -8,7 +8,7 @@ const useVehicleManagement = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   useEffect(() => {
-    axios.get("https://ecarro-ol59r2nnt-igorf08s-projects.vercel.app/veiculos").then((res) => {
+    axios.get("https://ecarro-db.vercel.app/veiculos").then((res) => {
       const data = res.data;
       if (Array.isArray(data) && data.length > 0) {
         const firstRecord = data[0];

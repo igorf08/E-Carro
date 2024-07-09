@@ -40,7 +40,7 @@ const useVehicleManagement = () => {
     console.log(`Excluindo registro com id: ${id}...`);
 
     axios
-      .delete(`http://VehicleDeleteModal:3000/veiculos/${id}`)
+      .delete(`https://ecarro-db.vercel.app/veiculos/${id}`)
       .then(() => {
         console.log("Registro deletado com sucesso");
         setRecords(trecords.filter((record) => record.id !== id));

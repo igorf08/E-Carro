@@ -6,6 +6,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import useVehicleManagement from "../hooks/useVehicleManagement";
 import VehicleDeleteModal from "../components/VehicleDeleteModal/VehicleDeleteModal";
 import VehicleEditModal from "../components/VehicleEditModal/VehicleEditModal";
+import Nav from "../components/Navbar/Nav"
 import { useState } from "react";
 
 const Admin = () => {
@@ -44,6 +45,7 @@ const Admin = () => {
 
   return (
     <Box style={{ height: 550, width: "100%" }}>
+      <Nav/>
       <DataGrid
         rows={trecords}
         columns={[

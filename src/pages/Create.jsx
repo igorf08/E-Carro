@@ -221,11 +221,11 @@ export default function Create() {
                   required
                   fullWidth
                   name="carMileage"
-                  label="Quilometragem do veículo"
+                  label="Km do veículo"
                   id="carMileage"
                   helperText={errors.carMileage?.message}
                   {...register('carMileage', {
-                    required: 'Insira a quilometragem!',
+                    required: 'Insira o km!',
                     pattern: {
                       value: /^[0-9\s]+$/,
                       message: 'Somente números são permitidos!',

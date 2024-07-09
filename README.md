@@ -1,7 +1,7 @@
 # E-Carro
 
 ## Descrição
-E-Carro é um e-commerce de veículos online que permite visualizar, adicionar, editar e deletar veículos. A aplicação é construída utilizando React, Material-UI e JSON Server. 
+E-Carro é um e-commerce de veículos online que permite visualizar, adicionar, editar e deletar anúncios. A aplicação é construída utilizando React, Material-UI e JSON Server. 
 Está hospedada no Vercel. A aplicação é totalmente responsiva, garantindo uma experiência de usuário suave em celulares, notebooks e monitores.
 
 ## Tecnologias Utilizadas

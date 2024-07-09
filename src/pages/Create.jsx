@@ -37,7 +37,7 @@ export default function Create() {
       numero_visualizacoes: 0
     };
 
-    fetch('https://ecarro-ol59r2nnt-igorf08s-projects.vercel.app/veiculos', {
+    fetch('https://db-e-carro.vercel.app/veiculos', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

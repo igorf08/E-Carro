@@ -17,7 +17,7 @@ const VehicleEditModal = ({ open, onClose, vehicle, onSave }) => {
 
   const handleSave = async () => {
     try {
-      await axios.put(`https://ecarro-db.vercel.app/veiculos/${vehicle.id}`, formData);
+      await axios.put(`https://db-e-carro.vercel.app/veiculos/${vehicle.id}`, formData);
       onSave(formData);
       onClose();
     } catch (error) {

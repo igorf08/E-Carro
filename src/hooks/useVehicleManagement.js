@@ -8,7 +8,7 @@ const useVehicleManagement = () => {
   const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 
   useEffect(() => {
-    axios.get("https://ecarro-db.vercel.app/veiculos").then((res) => {
+    axios.get("https://db-e-carro.vercel.app/veiculos").then((res) => {
       const data = res.data;
       if (Array.isArray(data) && data.length > 0) {
         const firstRecord = data[0];
@@ -40,7 +40,7 @@ const useVehicleManagement = () => {
     console.log(`Excluindo registro com id: ${id}...`);
 
     axios
-      .delete(`https://ecarro-db.vercel.app/veiculos/${id}`)
+      .delete(`https://db-e-carro.vercel.app/veiculos/${id}`)
       .then(() => {
         console.log("Registro deletado com sucesso");
         setRecords(trecords.filter((record) => record.id !== id));

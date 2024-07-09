@@ -1,16 +1,27 @@
+import { useEffect, useState } from 'react';
+import VehicleDetailsModal from "../VehicleDetailsModal/VehicleDetailsModal";
+import { formatters } from "../../utils/formatters";
 import { Card, CardContent, CardMedia, Typography, Button, CardActionArea, CardActions, Box, ToggleButtonGroup, ToggleButton, Stack } from "@mui/material";
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import ViewListIcon from '@mui/icons-material/ViewList';
-import { useState } from "react";
-import VehicleDetailsModal from "../VehicleDetailsModal/VehicleDetailsModal";
-import { formatters } from "../../utils/formatters";
-import useVehicles from "../../hooks/useVehicles";
 
 const MediaCard = () => {
   const [view, setView] = useState('grid');
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedVehicle, setSelectedVehicle] = useState(null);
-  const {vehicles, setVehicles} = useVehicles(); 
+  const [vehicles, setVehicles] = useState([]);
+
+
+  useEffect(() => {
+      const fetchData = () => {
+        fetch('https://db-e-carro.vercel.app/veiculos')
+          .then((response) => response.json())
+          .then((data) => setVehicles(data))
+          .catch((error) => console.error('Erro ao buscar veículos:', error));
+        };
+        
+        fetchData();
+      }, []);  
 
   const handleViewChange = (event, nextView) => {
     setView(nextView);
@@ -34,7 +45,7 @@ const MediaCard = () => {
   };
 
   return (
-    <Box style={{height: '100vh'}} sx={{p: '2em', backgroundColor: '#f6f6f6'}}>
+    <Box sx={{p: '2em'}}>
       <Stack direction="row" spacing={2} justifyContent="left" mb={4}>
         <ToggleButtonGroup value={view} exclusive onChange={handleViewChange} aria-label="view toggle">
           <ToggleButton value="grid" aria-label="grid view">
@@ -55,28 +66,28 @@ const MediaCard = () => {
                 <Typography sx={{ mb: '0.2em' }} variant={view === 'grid' ? 'h6' : 'h2'} component="div">
                   {vehicle.marca} {vehicle.modelo}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'h6'} sx={{fontWeight: '600'}} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'h6'} sx={{fontWeight: '600'}} color="text">
                   {formatters.currencyFormatter(parseInt(vehicle.preco))}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text">
                   Ano: {vehicle.ano}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text">
                   Cor: {vehicle.cor}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text">
                   Placa: {vehicle.placa}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text">
                   Cidade: {vehicle.cidade}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text">
                   Quilometragem: {vehicle.quilometragem}km
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text">
                   Data de Cadastro: {formatters.formatDate(vehicle.data_cadastro)}
                 </Typography>
-                <Typography variant={view === 'grid' ? 'body3' : 'body1'} color="text">
+                <Typography variant={view === 'grid' ? 'body2' : 'body1'} color="text">
                   Nº de visualizações: {vehicle.numero_visualizacoes}
                 </Typography>
               </CardContent>

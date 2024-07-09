@@ -7,7 +7,6 @@ import useVehicleManagement from "../hooks/useVehicleManagement";
 import VehicleDeleteModal from "../components/VehicleDeleteModal/VehicleDeleteModal";
 import VehicleEditModal from "../components/VehicleEditModal/VehicleEditModal";
 import Nav from "../components/Navbar/Nav"
-import { useState } from "react";
 
 const Admin = () => {
   const {
@@ -18,30 +17,17 @@ const Admin = () => {
     handleOpenDeleteModal,
     handleCloseDeleteModal,
     handleDelete,
-    setRecords
+    openDeleteToast,
+    setOpenDeleteToast,
+    editModalOpen,
+    selectedVehicle, 
+    openEditToast, 
+    setOpenEditToast,
+    handleOpenEditModal,
+    handleCloseEditModal,
+    handleSaveEdit
   } = useVehicleManagement();
 
-  const [editModalOpen, setEditModalOpen] = useState(false);
-  const [selectedVehicle, setSelectedVehicle] = useState(null);
-  const [open, setOpen] = useState(false);
-
-  const handleOpenEditModal = (vehicle) => {
-    setSelectedVehicle(vehicle);
-    setEditModalOpen(true);
-  };
-
-  const handleCloseEditModal = () => {
-    setEditModalOpen(false);
-    setTimeout(() => setOpen(false), 3000)
-  };
-
-  const handleSaveEdit = (updatedVehicle) => {
-    const updatedRecords = trecords.map((v) =>
-      v.id === updatedVehicle.id ? updatedVehicle : v
-    );
-    setRecords(updatedRecords);
-    setOpen(true);
-  };
 
   return (
     <Box style={{ height: 550, width: "100%" }}>
@@ -91,9 +77,14 @@ const Admin = () => {
           onSave={handleSaveEdit}
         />
       )}
-      <Snackbar open={open} autoHideDuration={3000} onClose={() => setOpen(false)}>
-        <Alert onClose={() => setOpen(false)} severity="success" variant="filled">
+      <Snackbar open={openEditToast} autoHideDuration={3000} onClose={() => setOpenEditToast(false)}>
+        <Alert onClose={() => setOpenEditToast(false)} severity="success" variant="filled">
           Anúncio editado com sucesso.
+        </Alert>
+      </Snackbar>
+      <Snackbar open={openDeleteToast} autoHideDuration={3000} onClose={() => setOpenDeleteToast(false)}>
+        <Alert onClose={() => setOpenDeleteToast(false)} severity="success" variant="filled">
+          Anúncio deletado com sucesso.
         </Alert>
       </Snackbar>
     </Box>

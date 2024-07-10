@@ -76,7 +76,6 @@ export default function Create() {
       console.error('É necessário enviar pelo menos 2 fotos em formatos png, jpg ou jpeg.');
       return;
     }
-  
 
     files.forEach(file => {
       const reader = new FileReader();

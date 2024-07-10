@@ -9,6 +9,7 @@ import "../../styles/style.css"
 //Hamburger open/close handlers.
 const Nav = () => {
   const [anchorNav, setAnchorNav] = useState(null);
+  
   const openMenu = ({ currentTarget }) => {
     setAnchorNav(currentTarget);
   }

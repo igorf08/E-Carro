@@ -10,17 +10,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom'
 import { Alert, Snackbar } from '@mui/material';
-
-
 const defaultTheme = createTheme();
-
 export default function Create() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [base64Files, setBase64Files] = useState([]);
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
-
   const onSubmit = (data) => {
     const body = {
       id: `${Math.random().toString(16).slice(2)}id`,
@@ -36,7 +32,6 @@ export default function Create() {
       data_cadastro: new Date().toISOString(),
       numero_visualizacoes: 0
     };
-
     fetch('https://db-e-carro.vercel.app/veiculos', {
       method: 'POST',
       headers: {
@@ -58,14 +53,10 @@ export default function Create() {
       .catch((error) => {
         console.error('Error:', error);
       });
-
   };
-
   const onUpload = (e) => {
     const files = Array.from(e.target.files);
     setSelectedFiles(files);
-
-
     const allowedExtensions = ['png', 'jpg', 'jpeg'];
     const validFiles = files.filter(file => {
       const extension = file.name.split('.').pop().toLowerCase();
@@ -76,7 +67,6 @@ export default function Create() {
       console.error('É necessário enviar pelo menos 2 fotos em formatos png, jpg ou jpeg.');
       return;
     }
-
     files.forEach(file => {
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -90,7 +80,6 @@ export default function Create() {
       };
     });
   };
-
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
@@ -103,8 +92,8 @@ export default function Create() {
           }}
         >
           <Box sx={{pl: 2, pt: 1, width: '100vw', height: '10vh'}}>
-            <Button variant='contained' onClick={() => navigate("/administracao", { replace: true }) }>Voltar</Button>
-            </Box>
+              <Button variant='contained' onClick={() => navigate("/administracao", { replace: true }) }>Voltar</Button>
+          </Box>
           <Typography component="h1" variant="h4">
             Criar um novo anúncio
           </Typography>
@@ -250,8 +239,8 @@ export default function Create() {
                       message: 'Número de placa inválido.'
                     },
                     validate: (value) => {
-                      if (value.length < 7) {
-                        return 'Sua placa precisa conter 7 dígitos.';
+                      if (value.length < 7 || value.length > 7) {
+                        return 'Número de placa inválido.';
                       }
                       return true;
                     }

@@ -97,12 +97,14 @@ export default function Create() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
+          <Box sx={{pl: 2, pt: 1, width: '100vw', height: '10vh'}}>
+            <Button onClick={() => navigate("/administracao", { replace: true }) }>Voltar</Button>
+            </Box>
           <Typography component="h1" variant="h4">
             Criar um novo anúncio
           </Typography>

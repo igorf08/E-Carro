@@ -76,7 +76,6 @@ export default function Create() {
       console.error('É necessário enviar pelo menos 2 fotos em formatos png, jpg ou jpeg.');
       return;
     }
-  
 
     files.forEach(file => {
       const reader = new FileReader();
@@ -98,12 +97,14 @@ export default function Create() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 4,
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
           }}
         >
+          <Box sx={{pl: 2, pt: 1, width: '100vw', height: '10vh'}}>
+            <Button variant='contained' onClick={() => navigate("/administracao", { replace: true }) }>Voltar</Button>
+            </Box>
           <Typography component="h1" variant="h4">
             Criar um novo anúncio
           </Typography>
@@ -245,7 +246,7 @@ export default function Create() {
                   {...register('carPlate', {
                     required: 'Insira a placa do veículo!',
                     pattern: {
-                      value: /[A-z]{3}-\d[A-j0-9]\d{2}/,
+                      value: /[A-Z]{3}[0-9][0-9A-Z][0-9]{2}/,
                       message: 'Número de placa inválido.'
                     },
                     validate: (value) => {

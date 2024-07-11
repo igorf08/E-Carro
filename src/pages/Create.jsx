@@ -103,7 +103,7 @@ export default function Create() {
           }}
         >
           <Box sx={{pl: 2, pt: 1, width: '100vw', height: '10vh'}}>
-            <Button onClick={() => navigate("/administracao", { replace: true }) }>Voltar</Button>
+            <Button variant='contained' onClick={() => navigate("/administracao", { replace: true }) }>Voltar</Button>
             </Box>
           <Typography component="h1" variant="h4">
             Criar um novo anúncio
@@ -246,7 +246,7 @@ export default function Create() {
                   {...register('carPlate', {
                     required: 'Insira a placa do veículo!',
                     pattern: {
-                      value: /[A-z]{3}-\d[A-j0-9]\d{2}/,
+                      value: /[A-Z]{3}[0-9][0-9A-Z][0-9]{2}/,
                       message: 'Número de placa inválido.'
                     },
                     validate: (value) => {

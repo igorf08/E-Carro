@@ -72,7 +72,7 @@ const MediaCard = () => {
             {vehicles.map((vehicle) => (              
             <Card key={vehicle.id} sx={{height: {md: '34em'}, maxWidth: view === 'grid' ? { xs: 145, md: 250 } : '100%', marginBottom: 2, boxShadow: 2 }}>
             <CardActionArea sx={{ display: 'flex', flexDirection: 'column', alignItems: 'start', height: '100%' }} >
-              <CardMedia sx={{ boxShadow: 1, height: view === 'grid' ? 200 : 400, width: '100%' }} component="img" image={vehicle.fotos[0]} />
+              <CardMedia sx={{ boxShadow: 1, height: view === 'grid' ? 200 : 200, width: '100%' }} component="img" image={vehicle.fotos[0]} />
               <CardContent sx={{h: '10em', flexGrow: 1, display: 'flex', flexDirection: 'column', gap: { xs: '0.5em', md: '0.3em' }}}>
                 <Typography sx={{ mb: '0.2em' }} variant={view === 'grid' ? 'h6' : 'h2'} component="div">
                   {vehicle.marca} {vehicle.modelo}
